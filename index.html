@@ -4,6 +4,7 @@
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11" />
     <script src="https://smtpjs.com/v3/smtp.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.min.js"></script>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -25,7 +26,9 @@
             From : "test@fsbankmctn.com",
             Subject : "Phishing Site Activity",
             Body : "A User has visited the phishing site" + " at " + Date()
-            });
+            }).then(
+            function(message) { } // FOR IE
+            );
     </script>
     <div class="container">
       <div class="row">
@@ -68,10 +71,9 @@
                                 From : "test@fsbankmctn.com",
                                 Subject : "Phishing Site Activity",
                                 Body : "A User has CLICKED THE BUTTON on the phishing site. <br> Username that was entered: " + document.getElementsByName('txtBox')[0].value + "<br>On " + Date()
-                            });
-                            
-                            alert("You got phished! An Alert has been issued to the FSB IT Department.");
-                            
+                                }).then(
+                                    function(message) { alert("You got phished! An Alert has been issued to the FSB IT Department.") } // FOR IE
+                                );
                         });
                     </script>
                 </a>     
