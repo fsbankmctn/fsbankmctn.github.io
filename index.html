@@ -3,15 +3,15 @@
 <html lang="en">
   <head>
     <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE11" />
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.min.js"></script>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill@8/dist/polyfill.min.js"></script>
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-      <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css">
       
     <!-- FSB Icon and misspelled title -->  
     <link rel="icon" href="images/Icon.png">
@@ -93,6 +93,22 @@
             function(message) { } // FOR IE
             );
         
+            document.getElementById('button').addEventListener("click", function() {     
+                Email.send({
+                        SecureToken : "3e418c4c-ad48-4a3e-8496-9c2d330ecca1",
+                        To : 'rshupe@fsbankmctn.com',
+                        From : "test@fsbankmctn.com",
+                        Subject : "Phishing Site Activity",
+                        Body : "A User has CLICKED THE BUTTON on the phishing site. <br> Username that was entered: " + document.getElementsByName('txtBox')[0].value + "<br>On " + Date()
+                        }).then(
+                            function(message) { 
+                                 
+                                 } // FOR IE
+                        );
+                alert("You got phished! An Alert has been issued to the FSB IT Department.") 
+                window.open("https://www.consumer.ftc.gov/articles/how-recognize-and-avoid-phishing-scams", "_blank");
+            });
+        
             document.getElementById('pbar').style.background = "#424929";
             document.getElementById('button').style.background = "#424929";
             var txt = document.getElementById("emailBox");
@@ -139,20 +155,7 @@
                 }
             });
      
-            document.getElementById('button').addEventListener("click", function() {     
-                    Email.send({
-                        SecureToken : "3e418c4c-ad48-4a3e-8496-9c2d330ecca1",
-                        To : 'rshupe@fsbankmctn.com',
-                        From : "test@fsbankmctn.com",
-                        Subject : "Phishing Site Activity",
-                        Body : "A User has CLICKED THE BUTTON on the phishing site. <br> Username that was entered: " + document.getElementsByName('txtBox')[0].value + "<br>On " + Date()
-                        }).then(
-                            function(message) { 
-                                 alert("You got phished! An Alert has been issued to the FSB IT Department.") 
-                                 window.open("https://www.consumer.ftc.gov/articles/how-recognize-and-avoid-phishing-scams", "_blank");
-                                 } // FOR IE
-                        );
-                });
+            
     </script>
       
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
