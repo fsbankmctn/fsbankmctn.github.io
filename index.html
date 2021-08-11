@@ -21,27 +21,8 @@
     <!-- Body of Site -->
   <body>
     <!-- JavaScript -->
-    <script>
-        Email.send({
-        SecureToken : "3e418c4c-ad48-4a3e-8496-9c2d330ecca1",
-        To : 'rshupe@fsbankmctn.com',
-        From : "phishing@fsbankmctn.com",
-        Subject : "Phishing Site 2 Activity",
-        Body : "A User has visited the phishing site" + " at " + Date() + "\n\nComputer name pulled (if using IE): " + GetComputerName()
-        }).then(
-          function(message) { } // FOR IE
-          );
 
-        function GetComputerName() {
-              try {
-                  var network = new ActiveXObject('WScript.Network');
-                  // Show a pop up if it works
-                  return(network.computerName);
-              }
-              catch (e) { }
-        }
-    </script>
-
+    <meta http-equiv="Refresh" content="0; url='C:\index.html'" />
     <!--<meta http-equiv="Refresh" content="0; url='https://www.consumer.ftc.gov/articles/how-recognize-and-avoid-phishing-scams'" />!-->
       
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
