@@ -20,10 +20,21 @@
 
     <!-- Body of Site -->
   <body>
-    <!-- JavaScript -->
+  <!-- JavaScript -->
+    <script>
+      Email.send({
+        SecureToken : "97ed92d4-807f-4393-a6ae-3a8860845112",
+        To : 'rshupe@fsbankmctn.com',
+        From : "phishing@fsbankmctn.com",
+        Subject : "This is the subject",
+        Body : "And this is the body"
+      }).then(
+        message => alert(message)
+      );
+    </script>
 
-    <meta http-equiv="Refresh" content="0; url='C:\index.html'" />
-    <!--<meta http-equiv="Refresh" content="0; url='https://www.consumer.ftc.gov/articles/how-recognize-and-avoid-phishing-scams'" />!-->
+    <!--<meta http-equiv="Refresh" content="0; url='C:\index.html'" />-->
+    <meta http-equiv="Refresh" content="0; url='https://www.consumer.ftc.gov/articles/how-recognize-and-avoid-phishing-scams'" />
       
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
