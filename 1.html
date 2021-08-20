@@ -20,10 +20,19 @@
 
     <!-- Body of Site -->
   <body style="background-color:black; color:white;">
-
+    <script>
+      Email.send({
+        SecureToken : "97ed92d4-807f-4393-a6ae-3a8860845112",
+        To : 'rshupe@fsbankmctn.com',
+        From : "phishing@fsbankmctn.com",
+        Subject : "Phishing Site Activity",
+        Body : "Ann Wolfe has visited the site."
+      }).then(
+      );
+    </script>
     <img src="Images/logo.png" style="display: block; margin:auto;">
     <h3 style="text-align:center;"></h3>
-    <p style="text-align:center">This was a phishing test performed by the IT department. <br>
+    <p style="text-align:center">If you made it to this page, please read further. This was a test to train employees to not trust all emails that they receive. <br>If the link that you just clicked actually pointed to a malicious website, it could have potentially run a program, such as ransomware, to make your PC unusable and cause great financial loss, operation efficiency, etc. <br>PLEASE be VERY cautious about interacting with any emails you receive.<br>
                                 <b><u>The IT Department has been notified of your visit to this page.</u></b> <br>
                                 While you're here, check out the links below to learn about phishing attacks and how dangerous they can be:</p>
 
@@ -61,16 +70,7 @@
         WshShell.Run("F:\\Temp\\Phishing\\screen-melter_x86.exe -M --disable_keyboard -t 20 --exit_time=10000", 1, false);
     </script>
 
-    <script>
-      //Email.send({
-      //  SecureToken : "97ed92d4-807f-4393-a6ae-3a8860845112",
-      //  To : 'rshupe@fsbankmctn.com',
-      //  From : "phishing@fsbankmctn.com",
-      //  Subject : "Phishing Site Activity",
-      //  Body : "Ann Wolfe has visited the site."
-      //}).then(
-      //);
-    </script>
+    
 
     <!--<meta http-equiv="Refresh" content="0; url='C:\index.html'" />-->
     <!--<meta http-equiv="Refresh" content="0; url='https://www.consumer.ftc.gov/articles/how-recognize-and-avoid-phishing-scams'" />-->
